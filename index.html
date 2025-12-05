@@ -72,8 +72,9 @@
                 <div class="hidden md:flex space-x-8 items-center">
                     <button onclick="scrollToSection('overview')" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">ওভারভিউ</button>
                     <button onclick="scrollToSection('comparison')" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">তুলনা টেবিল</button>
-                    <button onclick="scrollToSection('integrations')" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">ইন্টিগ্রেশন ও ব্যবহার</button>
+                    <button onclick="scrollToSection('integrations')" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">ইন্টিগ্রেশন</button>
                     <button onclick="scrollToSection('pricing')" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">খরচ ক্যালকুলেটর</button>
+                    <button onclick="scrollToSection('resources')" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> রিপোর্টস</button>
                     <button onclick="scrollToSection('decision')" class="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium">সিদ্ধান্ত নিন</button>
                 </div>
                 <!-- Mobile menu button -->
@@ -90,8 +91,9 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg">
             <button onclick="scrollToSection('overview'); toggleMobileMenu()" class="block w-full text-left py-2 text-gray-600 hover:text-blue-600">ওভারভিউ</button>
             <button onclick="scrollToSection('comparison'); toggleMobileMenu()" class="block w-full text-left py-2 text-gray-600 hover:text-blue-600">তুলনা টেবিল</button>
-            <button onclick="scrollToSection('integrations'); toggleMobileMenu()" class="block w-full text-left py-2 text-gray-600 hover:text-blue-600">ইন্টিগ্রেশন ও ব্যবহার</button>
+            <button onclick="scrollToSection('integrations'); toggleMobileMenu()" class="block w-full text-left py-2 text-gray-600 hover:text-blue-600">ইন্টিগ্রেশন</button>
             <button onclick="scrollToSection('pricing'); toggleMobileMenu()" class="block w-full text-left py-2 text-gray-600 hover:text-blue-600">খরচ ক্যালকুলেটর</button>
+            <button onclick="scrollToSection('resources'); toggleMobileMenu()" class="block w-full text-left py-2 text-gray-600 hover:text-blue-600">রিপোর্টস</button>
             <button onclick="scrollToSection('decision'); toggleMobileMenu()" class="block w-full text-left py-2 text-blue-600 font-bold">সিদ্ধান্ত নিন</button>
         </div>
     </nav>
@@ -123,7 +125,8 @@
              2. Detailed Tabular Comparison: Organized data for deep dive.
              3. Usage & Integration: Addressing specific user query about "How to use".
              4. Pricing Calculator: Interactive element to estimate costs.
-             5. Decision Wizard: Interactive quiz to guide user choice.
+             5. PDF Resources: Direct links to full reports.
+             6. Decision Wizard: Interactive quiz to guide user choice.
         -->
 
         <!-- Section 1: Capability Overview (Radar Chart) -->
@@ -334,7 +337,69 @@
             </div>
         </section>
 
-        <!-- Section 5: Decision Wizard -->
+        <!-- Section 5: PDF Resources & Download -->
+        <section id="resources" class="bg-gray-100 rounded-xl shadow-inner p-6 md:p-8 border border-gray-200">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 flex justify-center items-center gap-2">
+                    <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    পূর্ণাঙ্গ রিপোর্ট ও রিসোর্স
+                </h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">সোর্স রিপোর্টগুলো বিস্তারিত পড়তে বা ডাউনলোড করতে নিচের লিঙ্কগুলো ব্যবহার করুন। (GitHub Pages-এর জন্য আপনার পিডিএফ ফাইলগুলো 'assets' বা 'docs' ফোল্ডারে রাখুন)।</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: Acefone Tools -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-red-500 card-hover flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-red-100 rounded-full mr-3">
+                            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight">Acefone: টুলস ও মূল্য</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-6 flex-grow">Acefone-এর ক্লাউড কমিউনিকেশন ইকোসিস্টেম, সাবস্ক্রিপশন এবং প্রাইসিং মডেলের বিস্তারিত গাইড।</p>
+                    <a href="./assets/Acefone_Tools_and_Pricing.pdf" target="_blank" class="w-full block text-center bg-white border border-red-500 text-red-600 font-semibold py-2 rounded hover:bg-red-50 transition">
+                        📄 পিডিএফ পড়ুন
+                    </a>
+                </div>
+
+                <!-- Card 2: Acefone vs VoIPLine -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-blue-500 card-hover flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-blue-100 rounded-full mr-3">
+                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight">Acefone বনাম VoIPLine</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-6 flex-grow">প্রযুক্তিগত সক্ষমতা এবং বাণিজ্যিক কৌশলের ওপর ভিত্তি করে দুই কোম্পানির বিস্তারিত তুলনামূলক বিশ্লেষণ।</p>
+                    <a href="./assets/Acefone_vs_VoIPLine_Report.pdf" target="_blank" class="w-full block text-center bg-white border border-blue-500 text-blue-600 font-semibold py-2 rounded hover:bg-blue-50 transition">
+                        📄 পিডিএফ পড়ুন
+                    </a>
+                </div>
+
+                <!-- Card 3: VoIP Subscription Guide -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-teal-500 card-hover flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-teal-100 rounded-full mr-3">
+                            <svg class="w-6 h-6 text-teal-600" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight">VoIP সাবস্ক্রিপশন গাইড</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-6 flex-grow">VoIPLine Telecom-এর সাবস্ক্রিপশন গাইড, সেটআপ এবং হিডেন কস্ট সম্পর্কে বিস্তারিত।</p>
+                    <a href="./assets/VoIP_Subscription_Guide.pdf" target="_blank" class="w-full block text-center bg-white border border-teal-500 text-teal-600 font-semibold py-2 rounded hover:bg-teal-50 transition">
+                        📄 পিডিএফ পড়ুন
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded p-4 text-sm text-yellow-800 flex items-start gap-3">
+                <span class="text-xl">⚠️</span>
+                <p>
+                    <strong>হোস্টিং নির্দেশিকা:</strong> এই বাটনগুলো কাজ করার জন্য, আপনার GitHub প্রজেক্টের রুট ফোল্ডারে <code>assets</code> নামে একটি ফোল্ডার তৈরি করুন এবং সেখানে আপনার পিডিএফ ফাইলগুলো আপলোড করুন। ফাইলের নামগুলো যেন কোডের <code>href</code>-এর সাথে মিলে (যেমন: <em>Acefone_Tools_and_Pricing.pdf</em>)।
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 6: Decision Wizard -->
         <section id="decision" class="bg-gradient-to-br from-indigo-900 to-blue-900 text-white rounded-xl shadow-lg p-8 md:p-12 text-center">
             <h2 class="text-3xl font-bold mb-4">এখনও সিদ্ধান্ত নিতে পারছেন না?</h2>
             <p class="text-blue-200 mb-8">মাত্র ৩টি প্রশ্নের উত্তর দিন, আমরা আপনাকে সেরা অপশনটি সাজেস্ট করব।</p>
